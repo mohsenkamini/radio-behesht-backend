@@ -4,9 +4,6 @@
 *.pot
 *.pyc
 __pycache__/
-*/__pycache__/
-*./__pycache__/
-radio_behesht_backend/__pycache__/settings.cpython-312.pyc
 local_settings.py
 db.sqlite3
 media/
