@@ -131,10 +131,12 @@ REST_FRAMEWORK =  {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication'
     ],
     # APIs can be protected for auth by this now
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permission.IsAuthenticated',
+        # https://www.django-rest-framework.org/api-guide/permissions/
+        'rest_framework.permissions.IsAuthenticated',
     ]
 }
 
