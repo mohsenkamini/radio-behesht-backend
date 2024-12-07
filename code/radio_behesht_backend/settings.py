@@ -155,3 +155,7 @@ DJOSER = {
     'USER_ID_FIELD': 'username',
     'LOGIN_FIELD': 'username',  
 }
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media/'
