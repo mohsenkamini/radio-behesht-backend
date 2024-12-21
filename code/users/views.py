@@ -5,7 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from .serializers import RadioUserSerializer
 
 # Create your views here.
-class UserProfileView(APIView):
+class UsersView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
