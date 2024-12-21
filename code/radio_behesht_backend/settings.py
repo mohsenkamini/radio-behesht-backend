@@ -1,3 +1,4 @@
+import os
 """
 Django settings for radio_behesht_backend project.
 
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'djoser',
     'users', 
     'corsheaders',
+    'stations',
 ]
 
 MIDDLEWARE = [
@@ -159,3 +161,4 @@ DJOSER = {
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
+RADIO_MEDIA_URL = os.getenv('RADIO_MEDIA_URL', '/media/radio/')
