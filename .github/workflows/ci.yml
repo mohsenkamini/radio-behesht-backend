@@ -6,7 +6,7 @@ jobs:
     env:
       IMAGE_NAME: nginx
       DOCKER_AUTH_CONFIG: ${{ secrets.DOCKER_AUTH_CONFIG }}
-    runs-on: ubuntu-latest
+    runs-on: alpine-latest
     steps:
     - name: checkout commit
       uses: actions/checkout@v4
@@ -25,6 +25,7 @@ jobs:
         --job-id ${GITHUB_RUN_ID}
   
   darkube_network_diagnostics:
+    container: hamravesh/darkube-cli:v1.1
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
