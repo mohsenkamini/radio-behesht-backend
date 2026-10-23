@@ -6,7 +6,7 @@ jobs:
     env:
       IMAGE_NAME: nginx
       DOCKER_AUTH_CONFIG: ${{ secrets.DOCKER_AUTH_CONFIG }}
-    runs-on: alpine-latest
+    runs-on: ubuntu-22.04
     steps:
     - name: checkout commit
       uses: actions/checkout@v4
