@@ -17,7 +17,7 @@ jobs:
     needs: darkube_build_test_mohsenkamini_hamravesh-c11
     runs-on: ubuntu-latest
     steps:
-    - run: curl --verbose --trace-time --connect-timeout 5 --max-time 5 --write-out '\nremote_ip=%{remote_ip} local_ip=%{local_ip} http_code=%{http_code} dns=%{time_namelookup} tcp=%{time_connect} tls=%{time_appconnect} first_byte=%{time_starttransfer} total=%{time_total}\n' https://api.console.hamravesh.ir
+    - run: wget --timeout=5 --connect-timeout=5 --output-document - https://api.console.hamravesh.ir
     
     - name: darkube-cli deploy
       run: darkube deploy --token ${{secrets.DEPLOY_TOKEN_TEST_MOHSENKAMINI_HAMRAVESH_C11}}
