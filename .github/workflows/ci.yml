@@ -34,10 +34,10 @@ jobs:
       TARGET_HOST: api.console.hamravesh.ir
 
     steps:
-      - name: Install diagnostic tools
-        run: |
-          apt-get update -qq
-          apt-get install -y mtr dnsutils curl
+      # - name: Install diagnostic tools
+      #   run: |
+      #     apt-get update -qq
+      #     apt-get install -y mtr dnsutils curl
 
       - name: Collect network diagnostics
         shell: bash
