@@ -36,15 +36,15 @@ jobs:
     steps:
       - name: Install diagnostic tools
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y mtr dnsutils curl
+          apt-get update -qq
+          apt-get install -y mtr dnsutils curl
 
       - name: Collect network diagnostics
         shell: bash
         run: curl --verbose --trace-time --connect-timeout 5 --max-time 5 --write-out '\nremote_ip=%{remote_ip} local_ip=%{local_ip} http_code=%{http_code} dns=%{time_namelookup} tcp=%{time_connect} tls=%{time_appconnect} first_byte=%{time_starttransfer} total=%{time_total}\n' https://api.console.hamravesh.ir
       - run: mtr -nrc 10 api.console.hamravesh.ir
-      - run:   mtr -nrTc 10 api.console.hamravesh.ir
-      - run:  curl ident.me
+      - run: mtr -nrTc 10 api.console.hamravesh.ir
+      - run: curl ident.me
          
 'on':
   push:
